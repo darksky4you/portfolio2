@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --main-color: rgba(14, 236, 6, 0.418);
+    --bg-color: #111;
+    --text-color: #eee;
+
+
+}
+
+::selection {
+    background-color: red;
+    color: blue;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    transition: all 0.5s linear;
+    overflow: none;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+img {
+    width: 100%;
+}
+
+.head {
+    width: 100%;
+    height: 55px;
+    position: relative;
+    background-color: transparent;
+    padding: 0 23px;
+    border-radius: 0 0;
+    transition: 0.3s;
+    box-shadow: 2px 2px 4px #000000;
+}
+
+.head:hover {
+    box-shadow: 2px 2px 4px var(--main-color);
+}
+
+/* for logo */
+
+.bg-logo {
+    color: var(--text-color);
+}
+
+.sm-logo {
+    color: var(--text-color);
+    display: none;
+}
+
+/* ********* */
+
+.head ul a {
+    color: white;
+    margin: 0 2px;
+    padding: 8px 18px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.2s;
+    border-radius: 30px;
+
+}
+
+.icon-mob {
+    display: none;
+
+}
+
+.icon-mob ion-icon {
+
+    width: 2rem;
+    height: 2rem;
+    color: white;
+
+}
+
+.icon-mob ion-icon[name="close-outline"] {
+    display: none;
+}
+
+.head ul a:hover,
+.head ul a span:active {
+    color: var(--main-color);
+
+}
+
+.main span {
+    color: #eee;
+    background: transparent;
+    /* border-radius: 2rem; */
+    padding: 22px;
+    border-bottom: 4px solid #eee;
+}
+
+.main {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.main h1 {
+    font-size: 3.5rem;
+    color: var(--main-color);
+    width: 100%;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0.6;
+    cursor: pointer;
+
+}
+.main h1 span:hover{
+    border-bottom: 4px solid transparent;
+}
+
+
+
+
+/* ********************************************** */
+
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+
+/* media screen */
+
+@media screen and (max-width:600px) {
+    .icon-mob {
+        display: block;
+        z-index: 999;
+
+    }
+
+    .head {
+        max-height: 50px;
+    }
+
+    .sm-logo {
+        display: block;
+    }
+
+    .bg-logo {
+        display: none;
+    }
+
+    .head ul {
+        width: 100%;
+        height: 100vh;
+        background: #111;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+    }
+
+    .head ul a {
+        font-size: 1.5rem;
+        background-color: #1f1e1e57;
+        margin-top: 15px;
+
+
+    }
+
+    .active ul {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .active .icon-mob ion-icon[name="close-outline"] {
+        display: block;
+    }
+
+    .active .icon-mob ion-icon[name="menu-outline"] {
+        display: none;
+    }
+
+    .main h1 {
+        font-size: 2.5rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ***************************************************** */
